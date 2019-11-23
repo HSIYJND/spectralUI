@@ -39,9 +39,16 @@ python main.py
 
 * Dark theme support
 * Exception handling
+* Improve performance
 * Display hyperspectral datacube
-* General sRGB from the input
+* Generate sRGB from the input
 * Adoption of MVC Architecture
 * Include state-of-the-arts Super-Resolution, Segmentation and Classification algorithms for hyperspectral images
 * Add support for users to try out their own algorithms
 * CLI support
+
+## Plans For Much Later
+
+* Re-wirte code in rust, when a stable gui framework is available for rust.
+* Support for multiple algorithms.
+* Support for Deep learning + GPGPU
