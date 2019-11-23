@@ -21,7 +21,27 @@ source <env_name>/bin/activate
 pip install -r path/to/requirements.txt
 ```
 Replace <env_name> with the name of the environment that you want to create
-Run the app by typing
+
+Run the app using:
 ```bash
 python main.py
 ```
+
+## Current Features
+
+* Load .mat files
+* Display spectral images in each band
+* Print metadata
+* Plot spectral signature by clicking on a pixel
+* Matplotlib navigation toolbar included
+
+## Fututre Plans
+
+* Dark theme support
+* Exception handling
+* Display hyperspectral datacube
+* General sRGB from the input
+* Adoption of MVC Architecture
+* Include state-of-the-arts Super-Resolution, Segmentation and Classification algorithms for hyperspectral images
+* Add support for users to try out their own algorithms
+* CLI support
