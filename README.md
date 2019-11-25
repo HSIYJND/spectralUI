@@ -1,4 +1,4 @@
-# spectralUI
+# spectralUI <img src="./icon.png" width="48" height="48">
 
 spectralUI is an open-source general purpose cross platform tool for analysing hyperspectral images.
 
