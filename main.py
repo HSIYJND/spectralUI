@@ -13,7 +13,8 @@ from PyQt5.QtWidgets import QApplication,\
     QHeaderView, QLabel, QPushButton,\
     QLineEdit, QMessageBox
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPalette, QColor, QIntValidator
+from PyQt5.QtGui import QPalette, QColor, QIntValidator,\
+    QIcon
 
 from os import path
 import sys
@@ -296,6 +297,9 @@ def set_dark_palette():
 if __name__ == '__main__':
     app = QApplication([])
     app.setStyle("Fusion")
+    
+    icon_path = path.join(path.dirname(sys.modules[__name__].__file__), 'icon.png')
+    app.setWindowIcon(QIcon(icon_path))
 
     dark_mode = False
     if dark_mode is True:
