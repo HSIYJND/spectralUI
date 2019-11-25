@@ -46,9 +46,10 @@ python main.py
 * Include state-of-the-arts Super-Resolution, Segmentation and Classification algorithms for hyperspectral images
 * Add support for users to try out their own algorithms
 * CLI support
+* Add documentation
 
 ## Plans For Much Later
 
 * Re-wirte code in rust, when a stable gui framework is available for rust.
 * Support for multiple algorithms.
-* Support for Deep learning + GPGPU
+* Support for Deep learning + GPU acceleration
