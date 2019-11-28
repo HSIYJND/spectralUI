@@ -45,6 +45,7 @@ python main.py
 * Adoption of MVC Architecture
 * Include state-of-the-arts Super-Resolution, Segmentation and Classification algorithms for hyperspectral images
 * Add support for users to try out their own algorithms
+* Auto updater
 * CLI support
 * Add documentation
 
