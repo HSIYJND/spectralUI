@@ -2,6 +2,9 @@
 
 spectralUI is an open-source general purpose cross platform tool for analysing hyperspectral images.
 
+## Website
+[spectralUI.github.io](https://spectralui.github.io)
+
 ## Screenshot
 
 ![spectralUI ver 0.1 Screenshot](https://i.ibb.co/F3F9r6b/outp.png)
