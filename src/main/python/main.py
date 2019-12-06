@@ -6,6 +6,8 @@
 --------------------------------------------------------------------
 """
 
+from fbs_runtime.application_context.PyQt5 import ApplicationContext
+
 from PyQt5.QtWidgets import QApplication,\
     QMainWindow, QWidget, QFileDialog, QAction,\
     QSplitter, QHBoxLayout, QVBoxLayout,\
@@ -25,14 +27,12 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg,\
 from matplotlib.figure import Figure
 import numpy as np
 
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.setWindowTitle('spectralUI')
         self.setMinimumSize(800, 600)
-        self.showFullScreen()
 
         # ---------------Menubar----------------
 
@@ -178,7 +178,7 @@ class MainWindow(QMainWindow):
         b = self.band_text.text()
         if len(b) < 1:
             alert = QMessageBox()
-            alert.setText('Please enter a band value!') 
+            alert.setText('Please enter a band value!')
             alert.exec_()
         elif 0 <= int(b) < self.datacube.shape[2]:
             self.update_meta_data(
@@ -190,7 +190,7 @@ class MainWindow(QMainWindow):
             alert.setText(
                 'Please enter a value b/w 0 and '+
                 str(self.datacube.shape[2])+'!'
-                ) 
+                )
             alert.exec_()
 
     def open_file(self):
@@ -293,22 +293,25 @@ def set_dark_palette():
     palette.setColor(QPalette.HighlightedText, Qt.black)
     return palette
 
-
 if __name__ == '__main__':
-    app = QApplication([])
-    app.setStyle("Fusion")
-    
-    icon_path = path.join(path.dirname(sys.modules[__name__].__file__), 'icon.png')
-    app.setWindowIcon(QIcon(icon_path))
+    appctxt = ApplicationContext()
+    appctxt.app.setStyle("Fusion")
+
+    icon_path = path.join(path.dirname(
+        sys.modules[__name__].__file__),
+        '../icons/icon.png'
+    )
+    appctxt.app.setWindowIcon(QIcon(icon_path))
 
     dark_mode = False
     if dark_mode is True:
-        app.setPalette(set_dark_palette())
-        app.setStyleSheet(
+        appctxt.app.setPalette(set_dark_palette())
+        appctxt.app.setStyleSheet(
             "QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }"
-            )
+        )
 
     main_window = MainWindow()
+    main_window.show()
 
-    exit_code = app.exec()
+    exit_code = appctxt.app.exec_()
     sys.exit(exit_code)
